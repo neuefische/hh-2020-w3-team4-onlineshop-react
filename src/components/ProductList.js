@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import ProductListItem from './ProductListItem'
 import axios from 'axios'
 
 export default function ProductList() {
@@ -10,10 +11,10 @@ export default function ProductList() {
       .then((list) => setProductList(list))
       .catch((error) => console.log(error))
   }, [])
-  console.log(productList)
+  // console.log(productList)
   return (
     <ul>
-      <li>Test</li>
+      <ProductListItem list={productList} />
     </ul>
   )
 }
