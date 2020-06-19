@@ -13,7 +13,7 @@ export default function ProductList() {
   }, [])
   // console.log(productList)
   return (
-    <ul>
+    <ul className="flex">
       <ProductListItem list={productList} />
     </ul>
   )

@@ -5,9 +5,9 @@ export default function ProductListItem({ list }) {
     <>
       {list.map((product, index) => {
         return (
-          <li key={product + index}>
+          <li key={product + index} className="product-card">
             <h2>{product.productName}</h2>
-            <p>{product.productPrice}</p>
+            <p>Preis: {product.productPrice} €</p>
             <p>{product.productDescription}</p>
           </li>
         )
