@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&family=Quicksand:wght@400;600&display=swap');
+:root {
+  --seagreen: #2e8b57;
+  --blue: #006e90;
+  --textcolor: #f7f9f7;
+  --red: #754043;
+  --headline-font: 'MuseoModerno', cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: var(--textcolor);
+  background-color: var(--seagreen);
+  margin: 0;
+}
+
+img {
+  width: 200px;
+  height: auto;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-rows: 20px, auto;
+  height: 100vh;
+}
+
+.scrollable {
+  overflow: scroll;
+}
+
+h1 {
+  font-family: var(--headline-font);
+  font-size: 1.5rem;
+  text-align: center;
+}
+h2 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+ul {
+  margin: 0 auto;
+  padding: 0;
+}
+li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.product-card {
+  background: var(--blue);
+  width: 80%;
+  padding: 10px;
+  border: solid 2px var(--red);
+  border-radius: 5px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scrollfix::after {
+  display: block;
+  height: 15px;
+  content: '';
+}
