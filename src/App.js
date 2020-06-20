@@ -2,6 +2,7 @@ import React from 'react'
 
 import './App.scss'
 import ProductList from './components/ProductList'
+import CustomerForm from './components/CustomerForm'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <section className="scrollable scrollfix">
         <ProductList />
       </section>
+      <CustomerForm />
     </div>
   )
 }
