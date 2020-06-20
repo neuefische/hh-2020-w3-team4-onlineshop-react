@@ -7,8 +7,9 @@ export default function CustomerForm() {
 
   return (
     <>
-      <h2>Become a member!</h2>
+      <h2>Join the fisher family</h2>
       <form onSubmit={submitHandler} className="form">
+        Registration form
         <label className="p-10">
           Your Name:
           <input

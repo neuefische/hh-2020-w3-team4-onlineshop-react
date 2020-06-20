@@ -16,7 +16,7 @@ function App() {
         <div className="main-grid">
           <nav>
             <ul className="flex-row">
-              <li className="nav-item">
+              <li className="nav-item flex">
                 <Link to="/">
                   {' '}
                   <img
@@ -27,18 +27,18 @@ function App() {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item flex">
                 <img className="nav-img" src={fishingRod} alt="fishingrod" />
                 <Link to="/products">Products</Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item flex">
                 <img className="nav-img" src={fisherman} alt="fisherman" />
 
                 <Link to="/users">Users</Link>
               </li>
             </ul>
           </nav>
-          <Switch className="scrollable scrollfix">
+          <Switch>
             <Route path="/products">
               <ProductList />
             </Route>

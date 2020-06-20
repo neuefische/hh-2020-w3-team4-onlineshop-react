@@ -1,10 +1,12 @@
 import React from 'react'
+import fish from '../assets/fish.png'
 
 export default function Home() {
   return (
     <div>
       <h1>Welcome to Fischer & Co. KG</h1>
-      <section>
+      <section className="p-20 text-justify flex">
+        <img src={fish} alt="fish" />
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,

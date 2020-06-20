@@ -25,7 +25,7 @@ img {
 
 .main-grid {
   display: grid;
-  grid-template-rows: 60px auto;
+  grid-template-rows: 85px auto;
   height: 100vh;
 }
 
@@ -79,7 +79,7 @@ li {
 
 .flex-row {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .form {
@@ -92,6 +92,10 @@ li {
 .p-10 {
   padding: 10px;
 }
+
+.p-20 {
+  padding: 20px;
+}
 .input {
   width: 150px;
   margin: 10px;
@@ -102,11 +106,21 @@ li {
   color: var(--textcolor);
   border: none;
 }
+a {
+  color: var(--textcolor);
+  text-decoration: none;
+}
 
 .nav-item {
   width: 40px;
+  padding: 2px;
+  justify-content: center;
 }
 .nav-img {
   width: 35px;
   height: auto;
+}
+
+.text-justify {
+  text-align: justify;
 }
