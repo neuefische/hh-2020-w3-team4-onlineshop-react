@@ -18,7 +18,7 @@ export default function Order() {
   return (
     <section>
       <h2>Place your order</h2>
-      <form onSubmit={submitHandler} className="form" function={setProductID}>
+      <form onSubmit={submitHandler} className="form">
         <OrderItems
           list={productList}
           getProductID={getProductID}
