@@ -6,27 +6,32 @@ export default function CustomerForm() {
   const [email, setEmail] = useState('')
 
   return (
-    <form onSubmit={submitHandler} className="flex">
-      <label>
-        Your Name:
-        <input
-          type="text"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        ></input>
-      </label>
-      <label>
-        Your Email:
-        <input
-          type="text"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        ></input>
-      </label>
-      <button type="submit" value="Submit">
-        Register
-      </button>
-    </form>
+    <>
+      <h2>Become a member!</h2>
+      <form onSubmit={submitHandler} className="form">
+        <label className="p-10">
+          Your Name:
+          <input
+            type="text"
+            className="input"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          ></input>
+        </label>
+        <label className="p-10">
+          Your Email:
+          <input
+            type="text"
+            className="input"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          ></input>
+        </label>
+        <button type="submit" value="Submit" className="button p-10 ">
+          Register
+        </button>
+      </form>
+    </>
   )
 
   function submitHandler(event) {
