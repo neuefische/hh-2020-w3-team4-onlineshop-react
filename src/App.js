@@ -19,16 +19,20 @@ function App() {
               <li className="nav-item">
                 <Link to="/">
                   {' '}
-                  <img className="nav-img" src={fishingBoat} />
+                  <img
+                    className="nav-img"
+                    src={fishingBoat}
+                    alt="fishingboat"
+                  />
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <img className="nav-img" src={fishingRod} />
+                <img className="nav-img" src={fishingRod} alt="fishingrod" />
                 <Link to="/products">Products</Link>
               </li>
               <li className="nav-item">
-                <img className="nav-img" src={fisherman} />
+                <img className="nav-img" src={fisherman} alt="fisherman" />
 
                 <Link to="/users">Users</Link>
               </li>
