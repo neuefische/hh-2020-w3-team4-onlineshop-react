@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import OrderItems from './OrderItems'
-import fishes from '../assets/fishes.png'
+import shipping from '../assets/phishing.png'
 
 export default function Order() {
   const [productList, setProductList] = useState([])
@@ -32,11 +32,8 @@ export default function Order() {
         </form>
       ) : (
         <>
-          <p className="text-justify p-20">
-            {' '}
-            Welcome to the fisher family! You have succesfully registered.
-          </p>
-          <img src={fishes} alt="fishes" />
+          <p className="text-justify p-20"> Thank you for your order! </p>
+          <img src={shipping} alt="shipping" />
         </>
       )}
     </section>
