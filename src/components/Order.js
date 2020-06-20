@@ -25,7 +25,7 @@ export default function Order() {
           setQuantity={getQuantity}
           initialQuanity={quantity}
         />
-        <button>Order now</button>
+        <button className="button p-10">Order now</button>
       </form>
     </section>
   )

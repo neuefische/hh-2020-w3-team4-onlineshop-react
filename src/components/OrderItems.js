@@ -10,7 +10,7 @@ export default function OrderItems({
 
   return (
     <>
-      <label>
+      <label className="p-10">
         Products
         <select onChange={(event) => getProductID(event.target.value)}>
           {list.map((product) => {
@@ -22,7 +22,7 @@ export default function OrderItems({
           })}
         </select>
       </label>
-      <label>
+      <label className="p-10">
         Quantity
         <input
           type="number"
