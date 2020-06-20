@@ -8,6 +8,8 @@ import Home from './components/Home'
 import fishingBoat from './assets/boat.png'
 import fishingRod from './assets/fishing-rod.png'
 import fisherman from './assets/fisherman.png'
+import fishernet from './assets/trap.png'
+import CreateOrder from './components/CreateOrder'
 
 function App() {
   return (
@@ -36,6 +38,10 @@ function App() {
 
                 <Link to="/users">Users</Link>
               </li>
+              <li className="nav-item flex">
+                <img className="nav-img" src={fishernet} alt="fishernet" />
+                <Link to="/orders">Orders</Link>
+              </li>
             </ul>
           </nav>
           <Switch>
@@ -44,6 +50,9 @@ function App() {
             </Route>
             <Route path="/users">
               <CustomerForm />
+            </Route>
+            <Route path="/orders">
+              <CreateOrder />
             </Route>
             <Route path="/">
               <Home />
