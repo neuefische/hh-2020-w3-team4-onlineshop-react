@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import OrderItems from './OrderItems'
+import fishes from '../assets/fishes.png'
 
 export default function Order() {
   const [productList, setProductList] = useState([])
   const [productID, setProductID] = useState('')
   const [quantity, setQuantity] = useState(0)
+  const [isOrdered, setIsOrdered] = useState(false)
 
   useEffect(() => {
     axios
@@ -16,31 +18,43 @@ export default function Order() {
   }, [])
 
   return (
-    <section>
+    <section className="flex">
       <h2>Place your order</h2>
-      <form onSubmit={submitHandler} className="form">
-        <OrderItems
-          list={productList}
-          getProductID={getProductID}
-          setQuantity={getQuantity}
-          initialQuanity={quantity}
-        />
-        <button className="button p-10">Order now</button>
-      </form>
+      {isOrdered === false ? (
+        <form onSubmit={submitHandler} className="form">
+          <OrderItems
+            list={productList}
+            getProductID={getProductID}
+            setQuantity={getQuantity}
+            initialQuanity={quantity}
+          />
+          <button className="button p-10">Order now</button>
+        </form>
+      ) : (
+        <>
+          <p className="text-justify p-20">
+            {' '}
+            Welcome to the fisher family! You have succesfully registered.
+          </p>
+          <img src={fishes} alt="fishes" />
+        </>
+      )}
     </section>
   )
 
   function submitHandler(event) {
     event.preventDefault()
-    axios.put('http://localhost:8085/orders/create/5ee3ba86b00776528056253b', {
-      items: [
-        {
-          product_id: productID,
-          quantity: Number(quantity),
-        },
-      ],
-    })
-    console.log({ productID }, { quantity })
+    axios
+      .put('http://localhost:8085/orders/create/5ee3ba86b00776528056253b', {
+        items: [
+          {
+            product_id: productID,
+            quantity: Number(quantity),
+          },
+        ],
+      })
+      .then(() => setIsOrdered(true))
+      .catch((error) => console.log(error))
   }
 
   function getProductID(value) {
