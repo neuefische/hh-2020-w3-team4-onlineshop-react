@@ -9,7 +9,7 @@ import fishingBoat from './assets/boat.png'
 import fishingRod from './assets/fishing-rod.png'
 import fisherman from './assets/fisherman.png'
 import fishernet from './assets/trap.png'
-import CreateOrder from './components/CreateOrder'
+import Order from './components/Order'
 
 function App() {
   return (
@@ -52,7 +52,7 @@ function App() {
               <CustomerForm />
             </Route>
             <Route path="/orders">
-              <CreateOrder />
+              <Order />
             </Route>
             <Route path="/">
               <Home />

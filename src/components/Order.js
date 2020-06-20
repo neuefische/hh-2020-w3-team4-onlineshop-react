@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import OrderItems from './OrderItems'
 
-export default function CreateOrder() {
+export default function Order() {
   const [productList, setProductList] = useState([])
   const [productID, setProductID] = useState('')
-
-  const [quantity, setQuantity] = useState('')
+  const [quantity, setQuantity] = useState(0)
 
   useEffect(() => {
     axios
@@ -18,30 +18,13 @@ export default function CreateOrder() {
   return (
     <section>
       <h2>Place your order</h2>
-      <form onSubmit={submitHandler} className="form">
-        <label>
-          Products
-          <select
-            value={'product'}
-            onChange={(event) => setProductID(event.target.value)}
-          >
-            {productList.map((product) => {
-              return (
-                <option key={product._id} value={product._id}>
-                  {product.productName}
-                </option>
-              )
-            })}
-          </select>
-        </label>
-        <label>
-          Quantity
-          <input
-            type="number"
-            value={quantity}
-            onChange={(event) => setQuantity(event.target.value)}
-          ></input>
-        </label>
+      <form onSubmit={submitHandler} className="form" function={setProductID}>
+        <OrderItems
+          list={productList}
+          getProductID={getProductID}
+          setQuantity={getQuantity}
+          initialQuanity={quantity}
+        />
         <button>Order now</button>
       </form>
     </section>
@@ -58,5 +41,12 @@ export default function CreateOrder() {
       ],
     })
     console.log({ productID }, { quantity })
+  }
+
+  function getProductID(value) {
+    setProductID(value)
+  }
+  function getQuantity(value) {
+    setQuantity(value)
   }
 }
