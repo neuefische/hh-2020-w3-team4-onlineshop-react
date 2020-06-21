@@ -25,22 +25,28 @@ function App() {
                     className="nav-img"
                     src={fishingBoat}
                     alt="fishingboat"
-                  />
+                  />{' '}
                   Home
                 </Link>
               </li>
               <li className="nav-item flex">
-                <img className="nav-img" src={fishingRod} alt="fishingrod" />
-                <Link to="/products">Products</Link>
+                <Link to="/products">
+                  <img className="nav-img" src={fishingRod} alt="fishingrod" />
+                  Products
+                </Link>
               </li>
               <li className="nav-item flex">
-                <img className="nav-img" src={fisherman} alt="fisherman" />
-
-                <Link to="/users">Users</Link>
+                <Link to="/users">
+                  {' '}
+                  <img className="nav-img" src={fisherman} alt="fisherman" />
+                  Users
+                </Link>
               </li>
               <li className="nav-item flex">
-                <img className="nav-img" src={fishernet} alt="fishernet" />
-                <Link to="/orders">Orders</Link>
+                <Link to="/orders">
+                  <img className="nav-img" src={fishernet} alt="fishernet" />
+                  Orders
+                </Link>
               </li>
             </ul>
           </nav>
