@@ -53,6 +53,15 @@ li {
   margin: 10px 0;
 }
 
+a {
+  color: var(--textcolor);
+  text-decoration: none;
+}
+
+select {
+  font-family: 'Quicksand', sans-serif;
+}
+
 .product-card {
   background: var(--blue);
   width: 80%;
@@ -89,13 +98,6 @@ li {
   align-items: center;
 }
 
-.p-10 {
-  padding: 10px;
-}
-
-.p-20 {
-  padding: 20px;
-}
 .input {
   width: 150px;
   margin: 10px;
@@ -105,14 +107,6 @@ li {
   background: var(--red);
   color: var(--textcolor);
   border: none;
-}
-a {
-  color: var(--textcolor);
-  text-decoration: none;
-}
-
-select {
-  font-family: 'Quicksand', sans-serif;
 }
 
 .nav-item {
@@ -127,4 +121,16 @@ select {
 
 .text-justify {
   text-align: justify;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.m-10 {
+  margin: 10px;
 }

@@ -40,7 +40,7 @@ export default function CustomerForm() {
         </>
       ) : (
         <>
-          <h2>Welcome to the fisher family"</h2>
+          <h2>Welcome to the fisher family!</h2>
           <p>You have succesfully registered.</p>
           <img src={fishes} alt="fishes" />
         </>
