@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import Axios from 'axios'
+import axios from 'axios'
 import fishes from '../assets/fishes.png'
+import Login from './Login'
 
 export default function CustomerForm() {
   const [name, setName] = useState('')
@@ -32,10 +33,12 @@ export default function CustomerForm() {
                 onChange={(event) => setEmail(event.target.value)}
               ></input>
             </label>
-            <button type="submit" value="Submit" className="button p-10 ">
+            <button type="submit" value="Submit" className="button p-10">
               Register
             </button>
           </form>
+
+          <Login />
         </>
       ) : (
         <>
@@ -49,10 +52,11 @@ export default function CustomerForm() {
 
   function submitHandler(event) {
     event.preventDefault()
-    Axios.put('http://localhost:8085/customers/create', {
-      customerName: name,
-      customerEmail: email,
-    })
+    axios
+      .put('http://localhost:8085/customers/create', {
+        customerName: name,
+        customerEmail: email,
+      })
       .then(() => setIsRegistered(true))
       .then((response) => console.log(response))
       .catch((error) => console.log(error))
