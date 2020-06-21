@@ -34,8 +34,7 @@ export default function Order() {
         <>
           <p className="text-justify p-20"> Thank you for your order! </p>
           <p className="text-justify p-20">
-            {' '}
-            We will prepare your order for shipment{' '}
+            We will prepare your order for shipment!
           </p>
 
           <img src={shipping} alt="shipping" />

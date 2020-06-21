@@ -36,7 +36,6 @@ export default function CustomerForm() {
               Register
             </button>
           </form>
-          )
         </>
       ) : (
         <>
