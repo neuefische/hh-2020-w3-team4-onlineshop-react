@@ -1,11 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export default function Login() {
   const [email, setEmail] = useState('')
   const [user, setUser] = useState(null)
-
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'))
+    if (!user) {
+      setIsLoggedIn(false)
+    } else {
+      setIsLoggedIn(true)
+      setUser(user)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (isLoggedIn === true) {
+      localStorage.setItem('user', JSON.stringify(user))
+    } else {
+      localStorage.removeItem('user')
+    }
+  }, [user, isLoggedIn])
 
   return (
     <section className="flex">
