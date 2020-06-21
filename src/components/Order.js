@@ -8,6 +8,7 @@ export default function Order() {
   const [productID, setProductID] = useState('')
   const [quantity, setQuantity] = useState(0)
   const [isOrdered, setIsOrdered] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
     axios
@@ -15,6 +16,13 @@ export default function Order() {
       .then((response) => response.data)
       .then((list) => setProductList(list))
       .catch((error) => console.log(error))
+  }, [])
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'))
+    if (user) {
+      setIsLoggedIn(true)
+    }
   }, [])
 
   return (
@@ -28,7 +36,9 @@ export default function Order() {
             setQuantity={getQuantity}
             initialQuanity={quantity}
           />
-          <button className="button p-10">Order now</button>
+          <button className="button p-10" disabled={isLoggedIn === false}>
+            Order now
+          </button>
         </form>
       ) : (
         <>
@@ -45,8 +55,13 @@ export default function Order() {
 
   function submitHandler(event) {
     event.preventDefault()
+    const user = JSON.parse(localStorage.getItem('user'))
+    if (!user) {
+      return
+    }
+
     axios
-      .put('http://localhost:8085/orders/create/5ee3ba86b00776528056253b', {
+      .put(`http://localhost:8085/orders/create/${user._id}`, {
         items: [
           {
             product_id: productID,

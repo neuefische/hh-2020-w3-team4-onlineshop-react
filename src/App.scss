@@ -107,6 +107,11 @@ select {
   background: var(--red);
   color: var(--textcolor);
   border: none;
+
+  &:disabled {
+    background: darkslategray;
+    color: gray;
+  }
 }
 
 .nav-item {
