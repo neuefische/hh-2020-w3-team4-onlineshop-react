@@ -2,7 +2,7 @@ import React from 'react'
 
 import './App.scss'
 import ProductList from './components/ProductList'
-import CustomerForm from './components/CustomerForm'
+import CustomerPage from './components/CustomerPage'
 import Home from './components/Home'
 import Order from './components/Order'
 import Navigation from './components/Navigation'
@@ -20,8 +20,8 @@ function App() {
         <Route path="/products">
           <ProductList />
         </Route>
-        <Route path="/users">
-          <CustomerForm />
+        <Route path="/customers">
+          <CustomerPage />
         </Route>
         <Route path="/orders">
           <Order />
