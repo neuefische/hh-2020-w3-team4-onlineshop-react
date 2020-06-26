@@ -39,7 +39,13 @@ export default function RegistrationForm({ updateRegistrationState }) {
           </label>
           <ErrorMessage name="name" component="div"></ErrorMessage>
           <label>
-            Email<Field name="email" type="text" placeholder="Email"></Field>
+            Email
+            <Field
+              name="email"
+              type="text"
+              placeholder="Email"
+              data-cy="register-email"
+            ></Field>
           </label>
           <ErrorMessage name="email" component="div"></ErrorMessage>
 
