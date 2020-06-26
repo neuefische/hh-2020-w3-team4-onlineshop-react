@@ -10,6 +10,7 @@ export default function ProductListItem({ list }) {
             <img src={product.productPicture} alt={product.productName} />
             <p>Preis: {product.productPrice} €</p>
             <p>{product.productDescription}</p>
+            <button className="button p-10">Add to fishing net</button>
           </li>
         )
       })}
