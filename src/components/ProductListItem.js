@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button'
 
 export default function ProductListItem({ list }) {
   return (
@@ -10,7 +11,7 @@ export default function ProductListItem({ list }) {
             <img src={product.productPicture} alt={product.productName} />
             <p>Preis: {product.productPrice} €</p>
             <p>{product.productDescription}</p>
-            <button className="button p-10">Add to fishing net</button>
+            <Button text="Add to fishing net" />
           </li>
         )
       })}
