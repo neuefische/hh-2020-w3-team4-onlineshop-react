@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@web-devil/ts-using": "^1.0.1",
     "cypress": "^4.9.0"
   }
 }
