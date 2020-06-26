@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+// import * as yup from 'yup'
+
+// const LoginSchema = yup.object().shape({
+// email: yup.string.email('Please insert a valid mail address').required('required')
+// })
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -35,6 +40,7 @@ export default function Login() {
               Insert your email here:{' '}
               <input
                 type="text"
+                name="email"
                 value={email}
                 className="input"
                 onChange={(event) => setEmail(event.target.value)}

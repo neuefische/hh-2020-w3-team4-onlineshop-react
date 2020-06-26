@@ -22,10 +22,10 @@ export default function () {
           </NavLink>
         </li>
         <li className="nav-item flex">
-          <NavLink to="/users">
+          <NavLink to="/customers">
             {' '}
             <img className="nav-img" src={fisherman} alt="fisherman" />
-            Users
+            Customers
           </NavLink>
         </li>
         <li className="nav-item flex">
