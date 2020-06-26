@@ -4,10 +4,12 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter as Router } from 'react-router-dom'
+import GlobalStyles from './components/GlobalStyles'
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <GlobalStyles />
       <App />
     </Router>
   </React.StrictMode>,
